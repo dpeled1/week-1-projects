@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+int main(void)
+{
+
+    float cash;
+    int cents;
+
+
+    int counter =0;
+
+
+
+    do{
+
+    printf("O hai! How much change is owed?\n");
+        cash = get_float();
+    }
+    while (cash<0);
+
+        // take input the amount of cash owned
+
+    cents =   cash * 100;
+    cents = round(cash*100);
+
+     if (cents % 25 == 0)
+     {
+         counter += round(cents / 25);
+         cents = 0;
+         printf("bbbb%i\n", counter);
+     }
+     else if ( cents != 0 && cents % 25 != cents) {
+             counter += round(cents / 25);
+             cents = cents % 25;
+             //NOW CENTS IS THE REMAINDER. I.E (401 % 25= 1)
+             printf("zzzz%i\n", counter);
+     }
+     //cents =12
+
+       if (cents != 0 && cents % 10 == 0)
+       {
+         counter += round(cents / 10);
+        printf("%i\n", counter);
+        cents = cents % 10;
+     printf("%i\n", counter);
+       }
+          else if (cents != 0 &&  cents % 10 != cents)
+          {
+              counter += round(cents/10);
+              cents = cents % 10;
+     printf("sss%i\n", counter);
+
+          }
+          //cents = 6
+         if (cents != 0 && cents % 5 == 0)
+         {
+           counter += round(cents/5);
+ printf("aa%i\n", counter);
+         }
+           else if ( cents != 0 && cents % 5 != cents)
+           {
+            counter += round(cents/5);
+            cents = cents % 5;
+ printf("11111%i\n", counter);
+           }
+
+         else
+         {
+          //counter += cents;
+ printf("11%i\n", counter);
+         }
+         counter += cents;
+ printf("%i\n", counter);
+ }
