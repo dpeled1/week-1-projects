@@ -33,10 +33,10 @@ int main(void)
      else if ( cents != 0 && cents % 25 != cents) {
              counter += round(cents / 25);
              cents = cents % 25;
-             //NOW CENTS IS THE REMAINDER. I.E (401 % 25= 1)
+   
 
      }
-     //cents =12
+  
 
        if (cents != 0 && cents % 10 == 0)
        {
